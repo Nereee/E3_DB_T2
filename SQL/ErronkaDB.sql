@@ -7,9 +7,12 @@ use db_zinema;
 create table zinema (
 Idzinema int auto_increment primary key,
 Izena varchar(50) not null,
-helbidea varchar(50) not null,
-kontaktua varchar(50) not null,
-deskribapena varchar(500)
+Kalea varchar(50) not null,
+Zenbakia varchar(5),
+PostaKodea varchar(5) not null,
+Herria varchar(50) not null,
+kontaktua varchar(12),
+deskribapena varchar(10000)
 );
 
 /*HACER UN TIKET POR CADA SITIO DONDE COMPRES ENTRADA*/
@@ -17,15 +20,15 @@ deskribapena varchar(500)
 create table filma(
 Idfilma int auto_increment primary key,
 Izenburua varchar(30) not null,
-Sinopsia varchar (500),
 Iraupena int not null,
 generoa varchar(20) not null,
 prezioa double,
-zuzendari varchar(20)
+zuzendaria varchar(20),
+Sinopsia varchar (100000)
 );
 
 create table bezeroa(
-NAN varchar(20) primary key,
+NAN varchar(9) primary key,
 Izena varchar(20) not null,
 abizena varchar(30) not null,
 J_data date not null,
@@ -37,15 +40,15 @@ pasahitza varchar (50) not null
 create table erosketa(
 iderosketa int auto_increment primary key,
 jatorria int not null,
-deskontua int,
+deskontua float,
 preziotot double not null,
-NAN varchar(20),
+NAN varchar(9),
 foreign key (NAN) references bezeroa (NAN) on delete cascade on update cascade
 );
 
 create table aretoa (
-izena varchar (40) not null,
 idaretoa int,
+izena varchar (40) not null,
 zinema int,
 primary key (zinema, idaretoa),
 foreign key (zinema) references zinema (idzinema)  on delete cascade on update cascade
@@ -73,4 +76,3 @@ foreign key (iderosketa) references erosketa (iderosketa) on delete cascade on u
 );
 
 
-/* Taulen ordena, script onetan zuzena. Beste fichero bat datubasea esportatzeko-. Foreign key constraitekin sortu "izen tecnicoa aplikatzeko, fk erlazio orretan, on update eta on delete erabaki, kasakada ere adibidez. Formularioa erantzun"*/
