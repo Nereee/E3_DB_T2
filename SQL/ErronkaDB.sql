@@ -4,75 +4,76 @@ create database if not exists db_zinema
 collate utf8mb4_spanish2_ci;
 use db_zinema;
 
-create table zinema (
+create table ZINEMA(
 Idzinema int auto_increment primary key,
 Izena varchar(50) not null,
 Kalea varchar(50) not null,
 Zenbakia varchar(5),
 PostaKodea varchar(5) not null,
 Herria varchar(50) not null,
-kontaktua varchar(12),
-deskribapena varchar(10000)
+Kontaktua varchar(12),
+Deskribapena varchar(10000)
 );
 
 /*HACER UN TIKET POR CADA SITIO DONDE COMPRES ENTRADA*/
 
-create table filma(
+create table FILMA(
 Idfilma int auto_increment primary key,
 Izenburua varchar(30) not null,
 Iraupena int not null,
-generoa varchar(20) not null,
-prezioa double,
-zuzendaria varchar(20),
+Generoa varchar(20) not null,
+Prezioa double,
+Zuzendaria varchar(20),
 Sinopsia varchar (100000)
 );
 
-create table bezeroa(
+create table BEZEROA(
 NAN varchar(9) primary key,
 Erabiltzailea varchar(10) unique not null, 
 Izena varchar(20) not null,
-abizena varchar(30) not null,
+Abizena varchar(30) not null,
 J_data date not null,
-mail varchar(50) not null unique,
-generoa enum("E","G","N", "O"),
-pasahitza varchar (50) not null
+Mail varchar(50) not null unique,
+Generoa enum("E","G","N", "O"),
+Pasahitza varchar (50) not null
 );
 
-create table erosketa(
-iderosketa int auto_increment primary key,
-jatorria int not null,
-deskontua float,
-preziotot double not null,
+create table EROSKETA(
+IdErosketa int auto_increment primary key,
+Jatorria int not null,
+Deskontua float,
+PrezioTot double not null,
 NAN varchar(9),
-foreign key (NAN) references bezeroa (NAN) on delete cascade on update cascade
+foreign key (NAN) references BEZEROA (NAN) on delete cascade on update cascade
 );
 
-create table aretoa (
-idaretoa int,
-izena varchar (40) not null,
-zinema int,
-primary key (zinema, idaretoa),
-foreign key (zinema) references zinema (idzinema)  on delete cascade on update cascade
-);
-
-
-create table saioa(
-idsaioa int auto_increment primary key,
-S_data date not null,
-idfilma int,
-idaretoa int,
-idzinema int,
-foreign key (idzinema, idaretoa) references aretoa (zinema, idaretoa) on delete cascade on update cascade,
-foreign key (idfilma) references filma (idfilma) on delete cascade on update cascade
+create table ARETOA(
+IdAretoa int,
+Izena varchar (40) not null,
+IdZinema int,
+primary key (IdZinema, idAretoa),
+foreign key (IdZinema) references ZINEMA (IdZinema)  on delete cascade on update cascade
 );
 
 
-create table sarrera (
-idsarrera int auto_increment primary key,
-idsaioa int,
-prezioa double not null,
-iderosketa int,
-foreign key (idsaioa) references saioa (idsaioa) on delete cascade on update cascade,
-foreign key (iderosketa) references erosketa (iderosketa) on delete cascade on update cascade
+create table SAIOA(
+IdSaioa int auto_increment primary key,
+Ordu_Data varchar(5) not null,
+S_Data date not null,
+IdFilma int,
+IdAretoa int,
+IdZinema int,
+foreign key (IdZinema, IdAretoa) references ARETOA (IdZinema, IdAretoa) on delete cascade on update cascade,
+foreign key (IdFilma) references FILMA (IdFilma) on delete cascade on update cascade
 );
-Insert into Bezeroa value("12345678G", "juan","Juan", "Fernandez", 14-2-1999, "juanfernandez@gmail.com","G","1234")
+
+
+create table SARRERA (
+IdSarrera int auto_increment primary key,
+IdSaioa int,
+Prezioa double not null,
+IdErosketa int,
+foreign key (IdSaioa) references SAIOA (IdSaioa) on delete cascade on update cascade,
+foreign key (IdErosketa) references EROSKETA (IdErosketa) on delete cascade on update cascade
+);
+Insert into BEZEROA value("12345678G", "juan","Juan", "Fernandez", 14-2-1999, "juanfernandez@gmail.com","G","1234")
