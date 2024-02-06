@@ -74,5 +74,4 @@ iderosketa int,
 foreign key (idsaioa) references saioa (idsaioa) on delete cascade on update cascade,
 foreign key (iderosketa) references erosketa (iderosketa) on delete cascade on update cascade
 );
-
-
+Insert into Bezeroa value("12345678G", "Juan", "Fernandez", 14-2-1999, "juanfernandez@gmail.com","G","1234")
