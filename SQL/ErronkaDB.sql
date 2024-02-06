@@ -29,6 +29,7 @@ Sinopsia varchar (100000)
 
 create table bezeroa(
 NAN varchar(9) primary key,
+Erabiltzailea varchar(10) unique not null, 
 Izena varchar(20) not null,
 abizena varchar(30) not null,
 J_data date not null,
@@ -74,4 +75,4 @@ iderosketa int,
 foreign key (idsaioa) references saioa (idsaioa) on delete cascade on update cascade,
 foreign key (iderosketa) references erosketa (iderosketa) on delete cascade on update cascade
 );
-Insert into Bezeroa value("12345678G", "Juan", "Fernandez", 14-2-1999, "juanfernandez@gmail.com","G","1234")
+Insert into Bezeroa value("12345678G", "juan","Juan", "Fernandez", 14-2-1999, "juanfernandez@gmail.com","G","1234")
