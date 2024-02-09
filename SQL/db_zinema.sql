@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `aretoa`
 --
-
+drop database db_zinema;
 CREATE TABLE `aretoa` (
   `IdAretoa` int(11) NOT NULL,
   `Izena` varchar(40) NOT NULL,
