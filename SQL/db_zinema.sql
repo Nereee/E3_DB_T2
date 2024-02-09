@@ -86,11 +86,12 @@ CREATE TABLE `bezeroa` (
 --
 
 INSERT INTO `bezeroa` (`NAN`, `Erabiltzailea`, `Izena`, `Abizena`, `J_data`, `Mail`, `Generoa`, `Pasahitza`) VALUES
-('12345678G', 'juan', 'Juan', 'Fernandez', '0000-00-00', 'juanfernandez@gmail.com', 'G', '1234');
+('12345678G', 'juan', 'Juan', 'Fernandez', '2003-12-05', 'juanfernandez@gmail.com', 'G', '1234'),
+('12325558F', 'hector', 'Hector', 'Ruiz', '2001-02-23', 'hectorru@gmail.com', 'G', '321'),
+('98765258G', 'leire', 'Leire', 'Flores', '1998-08-15', 'floreslei@gmail.com', 'E', '98547l'),
+('47845875J', 'mikel', 'Mikel', 'Castro', '1987-12-25', 'mikelcas56@gmail.com', 'G', '22587484');
 
 -- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `erosketa`
 --
 
@@ -160,11 +161,11 @@ CREATE TABLE `saioa` (
 --
 
 INSERT INTO `saioa` (`IdSaioa`, `Ordu_Data`, `S_Data`, `IdFilma`, `IdAretoa`, `IdZinema`) VALUES
-(1, '8:00', '0000-00-00', 1, 1, 1),
-(2, '10:30', '0000-00-00', 2, 2, 1),
-(3, '13:15', '0000-00-00', 3, 1, 2),
-(4, '15:45', '0000-00-00', 1, 2, 2),
-(5, '18:00', '0000-00-00', 2, 1, 3);
+(1, '8:00', '2024-02-10', 1, 1, 1),
+(2, '10:30', '2023-05-20', 2, 2, 1),
+(3, '13:15', '2024-02-12', 3, 1, 2),
+(4, '15:45', '2024-02-15', 1, 2, 2),
+(5, '18:00', '2024-03-23', 2, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -373,3 +374,5 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+select * from bezeroa;
