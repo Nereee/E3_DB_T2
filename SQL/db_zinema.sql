@@ -253,6 +253,19 @@ INSERT INTO `zinema` (`Idzinema`, `Izena`, `Kalea`, `Zenbakia`, `PostaKodea`, `H
 (49, '', '', '', '', '', '', ''),
 (50, '', '', '', '', '', '', '');
 
+CREATE TABLE `langile` (
+  `IdLangile` int(11) NOT NULL,
+  `Izena` varchar(10) NOT NULL,
+  `Abizena` varchar(10) NOT NULL,
+  `J_data` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+
+
+INSERT INTO `langile` (`IdLangile`, `Izena`, `Abizena`, `J_data`) VALUES
+(1, 'Aitor','Prados','2000-06-18' ),
+(2, 'Laura', 'Castro', '1996-01-22'),
+(3, 'Jorge','Beaskoetxea','1985-09-10'),
+(4,'Paula','Jauregui','1999-11-20');
 --
 -- Índices para tablas volcadas
 --
@@ -375,4 +388,4 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
-select * from bezeroa;
+select * from langile;
