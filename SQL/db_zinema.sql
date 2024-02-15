@@ -104,7 +104,11 @@ CREATE TABLE `erosketa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 -- --------------------------------------------------------
-
+INSERT INTO `erosketa` (`IdErosketa`, `Jatorria`, `Deskontua`, `PrezioTot`, `NAN`) VALUES 
+(1, 1, 0.2, 10.0, '12345678G'),
+(2, 2, 0.3, 15.0, '12325558F'),
+(3, 2, 0.0, 5.00, '98765258G'),
+(4, 1, 0.3, 40.0, '47845875J');
 --
 -- Estructura de tabla para la tabla `filma`
 --
@@ -167,6 +171,8 @@ INSERT INTO `saioa` (`IdSaioa`, `Ordu_Data`, `S_Data`, `IdFilma`, `IdAretoa`, `I
 (4, '15:45', '2024-02-15', 1, 2, 2),
 (5, '18:00', '2024-03-23', 2, 1, 3);
 
+
+
 -- --------------------------------------------------------
 
 --
@@ -181,7 +187,13 @@ CREATE TABLE `sarrera` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 -- --------------------------------------------------------
-
+INSERT INTO `sarrera` (`IdSarrera`, `IdSaioa`, `Prezioa`, `IdErosketa`) VALUES 
+(1, 1, 5.00, 1),
+(2, 1, 5.00, 2),
+(3, 3, 5.00, 3),
+(4, 4, 5.00, 4),
+(5, 1, 5.00, 1),
+(6, 1, 5.00, 1);
 --
 -- Estructura de tabla para la tabla `zinema`
 --

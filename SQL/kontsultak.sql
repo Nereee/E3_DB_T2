@@ -1,5 +1,11 @@
 #Iaz diru gehien aportatu duten filmen zerrenda osoa dimentsio desberdinak erabiliz aztertzeko.
-
+SELECT f.Izenburua, sum(e.PrezioTot) AS ErrentaGehien
+FROM saioa s
+JOIN filma f ON s.IdFilma = f.Idfilma
+JOIN erosketa e ON s.IdSaioa = e.Jatorria
+WHERE YEAR(s.S_Data) = YEAR(CURRENT_DATE) - 1
+GROUP BY f.Izenburua
+ORDER BY ErrentaGehien DESC;
 
 
 #Film gehien ikusi dituzten erabiltzaileak 
@@ -8,7 +14,13 @@ from saioa inner join filma using(idfilma)
 group by (izenburua);
 
 #Bezero gutxien dituen zinema, bezero-kopurua adierazita.
-
+SELECT z.izena, COUNT(s.IdSarrera) AS 'Bezero Kopurua'
+FROM zinema z
+inner join saioa sa ON z.Idzinema = sa.IdZinema
+inner join sarrera s ON sa.IdSaioa = s.IdSaioa
+GROUP BY z.Izena
+ORDER BY COUNT(s.IdSarrera) ASC
+LIMIT 1;
 
 
 
@@ -20,7 +32,6 @@ JOIN aretoa a ON z.Idzinema = a.IdZinema
 JOIN saioa s ON a.IdZinema = s.IdZinema AND a.IdAretoa = s.IdAretoa
 JOIN filma f ON s.IdFilma = f.Idfilma
 GROUP BY z.Izena;
-
 
 
 
