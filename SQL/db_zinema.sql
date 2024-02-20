@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `aretoa`
 --
-
+drop database db_zinema;
 CREATE TABLE `aretoa` (
   `IdAretoa` int(11) NOT NULL,
   `Izena` varchar(40) NOT NULL,
@@ -86,11 +86,12 @@ CREATE TABLE `bezeroa` (
 --
 
 INSERT INTO `bezeroa` (`NAN`, `Erabiltzailea`, `Izena`, `Abizena`, `J_data`, `Mail`, `Generoa`, `Pasahitza`) VALUES
-('12345678G', 'juan', 'Juan', 'Fernandez', '0000-00-00', 'juanfernandez@gmail.com', 'G', '1234');
+('12345678G', 'juan', 'Juan', 'Fernandez', '2003-12-05', 'juanfernandez@gmail.com', 'G', '1234'),
+('12325558F', 'hector', 'Hector', 'Ruiz', '2001-02-23', 'hectorru@gmail.com', 'G', '321'),
+('98765258G', 'leire', 'Leire', 'Flores', '1998-08-15', 'floreslei@gmail.com', 'E', '98547l'),
+('47845875J', 'mikel', 'Mikel', 'Castro', '1987-12-25', 'mikelcas56@gmail.com', 'G', '22587484');
 
 -- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `erosketa`
 --
 
@@ -103,7 +104,11 @@ CREATE TABLE `erosketa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 -- --------------------------------------------------------
-
+INSERT INTO `erosketa` (`IdErosketa`, `Jatorria`, `Deskontua`, `PrezioTot`, `NAN`) VALUES 
+(1, 1, 0.2, 10.0, '12345678G'),
+(2, 2, 0.3, 15.0, '12325558F'),
+(3, 2, 0.0, 5.00, '98765258G'),
+(4, 1, 0.3, 40.0, '47845875J');
 --
 -- Estructura de tabla para la tabla `filma`
 --
@@ -160,11 +165,13 @@ CREATE TABLE `saioa` (
 --
 
 INSERT INTO `saioa` (`IdSaioa`, `Ordu_Data`, `S_Data`, `IdFilma`, `IdAretoa`, `IdZinema`) VALUES
-(1, '8:00', '0000-00-00', 1, 1, 1),
-(2, '10:30', '0000-00-00', 2, 2, 1),
-(3, '13:15', '0000-00-00', 3, 1, 2),
-(4, '15:45', '0000-00-00', 1, 2, 2),
-(5, '18:00', '0000-00-00', 2, 1, 3);
+(1, '8:00', '2024-02-10', 1, 1, 1),
+(2, '10:30', '2023-05-20', 2, 2, 1),
+(3, '13:15', '2024-02-12', 3, 1, 2),
+(4, '15:45', '2024-02-15', 1, 2, 2),
+(5, '18:00', '2024-03-23', 2, 1, 3);
+
+
 
 -- --------------------------------------------------------
 
@@ -180,7 +187,13 @@ CREATE TABLE `sarrera` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 -- --------------------------------------------------------
-
+INSERT INTO `sarrera` (`IdSarrera`, `IdSaioa`, `Prezioa`, `IdErosketa`) VALUES 
+(1, 1, 5.00, 1),
+(2, 1, 5.00, 2),
+(3, 3, 5.00, 3),
+(4, 4, 5.00, 4),
+(5, 1, 5.00, 1),
+(6, 1, 5.00, 1);
 --
 -- Estructura de tabla para la tabla `zinema`
 --
@@ -206,6 +219,7 @@ INSERT INTO `zinema` (`Idzinema`, `Izena`, `Kalea`, `Zenbakia`, `PostaKodea`, `H
 (3, 'Cinesa Zubiarte', ' Leizaola Lehendakariaren Kalea', '2', '48009', 'Abando', '932 28 96 00', 'Zubiarte Cinesak 8 areto ditu, Zubiarte merkataritza-gunearen barruan kokatua, zinemako esperientziarik onena eskaintzeko. Gela guztiek VIP besaulkiak dituzte, erosotasun handiagoa, leku gehiago eta banakako beso-euskarriak eskaintzen dituztenak. Zinema Bilboko erdigunean dago, itsasadarraren ertzean eta Deustuko zubiaren ondoan. Gainera, Iberdrola Dorrearekin, Guggenheim eta Arte Eder museoekin eta Euskalduna Jauregiarekin partekatzen du espazioa.'),
 (4, 'Golem Alhóndiga', 'Arriquíbar Plaza', '4', '48001', 'Abando', '946 07 07 67', 'Golem Alhóndiga zinema Alhóndiga Bilbao kultur zentroan kokatutako zinema bat da, askotariko programazioagatik eta film independenteetan, egile-filmetan eta arte-zineman duen ikuspegiagatik ezaguna. Esperientzia paregabea eskaintzen du kulturalki aberasgarria den giroan, kalitate handiko proiekzio-teknologiaz hornitutako aretoekin. Proiekzio erregularrak ez ezik, zinemak ekitaldi bereziak, ziklo tematikoak eta zinema-jaialdiak ere antolatzen ditu, zazpigarren arteak maite duen ikus-entzuleak erakartzeko.'),
 (5, 'Cine Yelmo Premium Artea', 'Peruri Auzoa', '33', '48940', 'Leioa', '', 'Yelmo Premium Artea zinema Artea merkataritza-gunean kokatutako zinema da, eta saritutako esperientzia zinematografikoa eskaintzen du. Abangoardiako instalazio eta teknologia modernoekin, zinema honek bereizmen handiko proiekzioak eta soinu inguratzailea eskaintzen ditu. Gainera, premium aretoak ditu, eserleku atzeragarriak eta janari- eta edari-zerbitzua eskaintzen dituztenak, ikusleei erosotasuna eta luxua emanez. Yelmo Premium Artea zinema eskualdeko zinema-zaleentzako herri-helmuga da, estreinaldiko filmen eta ekitaldi berezien aukera zabalarekin.');
+
 
 --
 -- Índices para tablas volcadas
@@ -328,3 +342,5 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+select * from langile;
