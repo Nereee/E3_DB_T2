@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `db_zinema`
+-- Base de datos: `db_e3zinema`
 --
 
 -- --------------------------------------------------------
@@ -205,52 +205,7 @@ INSERT INTO `zinema` (`Idzinema`, `Izena`, `Kalea`, `Zenbakia`, `PostaKodea`, `H
 (2, 'Cinesa Max Ocio', 'Kareaga Kalea', '', '48903', 'Barakaldo', '932 28 96 00', 'Max Ocio Max Ocio gune komertzialean kokatutako zinema da, giro moderno eta eroso batean kalitatezko esperientzia zinematografikoa eskaintzeagatik ezaguna. Max Ocio zinemak hainbat genero eta formatutako filmak eta 2D eta 3Dko proiekzioak eskaintzen ditu, ikusle guztien gustuak asetzeko. Zinema-aretoez gain, janari- eta entretenimendu-guneak ere baditu konplexuak, familian edo lagunekin gozatzeko helmuga oso bihurtuz.'),
 (3, 'Cinesa Zubiarte', ' Leizaola Lehendakariaren Kalea', '2', '48009', 'Abando', '932 28 96 00', 'Zubiarte Cinesak 8 areto ditu, Zubiarte merkataritza-gunearen barruan kokatua, zinemako esperientziarik onena eskaintzeko. Gela guztiek VIP besaulkiak dituzte, erosotasun handiagoa, leku gehiago eta banakako beso-euskarriak eskaintzen dituztenak. Zinema Bilboko erdigunean dago, itsasadarraren ertzean eta Deustuko zubiaren ondoan. Gainera, Iberdrola Dorrearekin, Guggenheim eta Arte Eder museoekin eta Euskalduna Jauregiarekin partekatzen du espazioa.'),
 (4, 'Golem Alhóndiga', 'Arriquíbar Plaza', '4', '48001', 'Abando', '946 07 07 67', 'Golem Alhóndiga zinema Alhóndiga Bilbao kultur zentroan kokatutako zinema bat da, askotariko programazioagatik eta film independenteetan, egile-filmetan eta arte-zineman duen ikuspegiagatik ezaguna. Esperientzia paregabea eskaintzen du kulturalki aberasgarria den giroan, kalitate handiko proiekzio-teknologiaz hornitutako aretoekin. Proiekzio erregularrak ez ezik, zinemak ekitaldi bereziak, ziklo tematikoak eta zinema-jaialdiak ere antolatzen ditu, zazpigarren arteak maite duen ikus-entzuleak erakartzeko.'),
-(5, 'Cine Yelmo Premium Artea', 'Peruri Auzoa', '33', '48940', 'Leioa', '', 'Yelmo Premium Artea zinema Artea merkataritza-gunean kokatutako zinema da, eta saritutako esperientzia zinematografikoa eskaintzen du. Abangoardiako instalazio eta teknologia modernoekin, zinema honek bereizmen handiko proiekzioak eta soinu inguratzailea eskaintzen ditu. Gainera, premium aretoak ditu, eserleku atzeragarriak eta janari- eta edari-zerbitzua eskaintzen dituztenak, ikusleei erosotasuna eta luxua emanez. Yelmo Premium Artea zinema eskualdeko zinema-zaleentzako herri-helmuga da, estreinaldiko filmen eta ekitaldi berezien aukera zabalarekin.'),
-(6, '', '', '', '', '', '', ''),
-(7, '', '', '', '', '', '', ''),
-(8, '', '', '', '', '', '', ''),
-(9, '', '', '', '', '', '', ''),
-(10, '', '', '', '', '', '', ''),
-(11, '', '', '', '', '', '', ''),
-(12, '', '', '', '', '', '', ''),
-(13, '', '', '', '', '', '', ''),
-(14, '', '', '', '', '', '', ''),
-(15, '', '', '', '', '', '', ''),
-(16, '', '', '', '', '', '', ''),
-(17, '', '', '', '', '', '', ''),
-(18, '', '', '', '', '', '', ''),
-(19, '', '', '', '', '', '', ''),
-(20, '', '', '', '', '', '', ''),
-(21, '', '', '', '', '', '', ''),
-(22, '', '', '', '', '', '', ''),
-(23, '', '', '', '', '', '', ''),
-(24, '', '', '', '', '', '', ''),
-(25, '', '', '', '', '', '', ''),
-(26, '', '', '', '', '', '', ''),
-(27, '', '', '', '', '', '', ''),
-(28, '', '', '', '', '', '', ''),
-(29, '', '', '', '', '', '', ''),
-(30, '', '', '', '', '', '', ''),
-(31, '', '', '', '', '', '', ''),
-(32, '', '', '', '', '', '', ''),
-(33, '', '', '', '', '', '', ''),
-(34, '', '', '', '', '', '', ''),
-(35, '', '', '', '', '', '', ''),
-(36, '', '', '', '', '', '', ''),
-(37, '', '', '', '', '', '', ''),
-(38, '', '', '', '', '', '', ''),
-(39, '', '', '', '', '', '', ''),
-(40, '', '', '', '', '', '', ''),
-(41, '', '', '', '', '', '', ''),
-(42, '', '', '', '', '', '', ''),
-(43, '', '', '', '', '', '', ''),
-(44, '', '', '', '', '', '', ''),
-(45, '', '', '', '', '', '', ''),
-(46, '', '', '', '', '', '', ''),
-(47, '', '', '', '', '', '', ''),
-(48, '', '', '', '', '', '', ''),
-(49, '', '', '', '', '', '', ''),
-(50, '', '', '', '', '', '', '');
+(5, 'Cine Yelmo Premium Artea', 'Peruri Auzoa', '33', '48940', 'Leioa', '', 'Yelmo Premium Artea zinema Artea merkataritza-gunean kokatutako zinema da, eta saritutako esperientzia zinematografikoa eskaintzen du. Abangoardiako instalazio eta teknologia modernoekin, zinema honek bereizmen handiko proiekzioak eta soinu inguratzailea eskaintzen ditu. Gainera, premium aretoak ditu, eserleku atzeragarriak eta janari- eta edari-zerbitzua eskaintzen dituztenak, ikusleei erosotasuna eta luxua emanez. Yelmo Premium Artea zinema eskualdeko zinema-zaleentzako herri-helmuga da, estreinaldiko filmen eta ekitaldi berezien aukera zabalarekin.');
 
 --
 -- Índices para tablas volcadas

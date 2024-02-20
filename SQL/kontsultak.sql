@@ -1,5 +1,5 @@
 #Iaz diru gehien aportatu duten filmen zerrenda osoa dimentsio desberdinak erabiliz aztertzeko.
-
+select filma.Izenburua,sum(preziotot), generoa ;
 #Film gehien ikusi dituzten erabiltzaileak 
 select count(idfilma) ikusita , izenburua  
 from saioa inner join filma using(idfilma)
