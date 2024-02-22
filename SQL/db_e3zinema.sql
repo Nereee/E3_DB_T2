@@ -26,7 +26,10 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `aretoa`
 --
-drop database db_zinema;
+create database if not exists db_e3zinema
+collate utf8mb4_spanish2_ci;
+use db_e3zinema;
+
 CREATE TABLE `aretoa` (
   `IdAretoa` int(11) NOT NULL,
   `Izena` varchar(40) NOT NULL,
